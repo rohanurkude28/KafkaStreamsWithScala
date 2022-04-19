@@ -1,17 +1,16 @@
 package edu.rohan.kafka
 
-import edu.rohan.kafka.KafkaStreams.Domain.{Discount, UserId}
-import io.circe.{Decoder, Encoder}
 import io.circe.generic.auto._
 import io.circe.parser._
 import io.circe.syntax._
+import io.circe.{Decoder, Encoder}
 import org.apache.kafka.common.serialization.Serde
-import org.apache.kafka.streams.{KafkaStreams, StreamsConfig}
 import org.apache.kafka.streams.kstream.{GlobalKTable, JoinWindows}
+import org.apache.kafka.streams.scala.ImplicitConversions._
 import org.apache.kafka.streams.scala.StreamsBuilder
 import org.apache.kafka.streams.scala.kstream.{KStream, KTable}
 import org.apache.kafka.streams.scala.serialization.Serdes
-import org.apache.kafka.streams.scala.ImplicitConversions._
+import org.apache.kafka.streams.{KafkaStreams, StreamsConfig}
 
 import java.time.Duration
 import java.time.temporal.ChronoUnit
