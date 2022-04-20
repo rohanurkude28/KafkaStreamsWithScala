@@ -108,6 +108,10 @@ object KafkaStreams {
     props.put(StreamsConfig.APPLICATION_ID_CONFIG, "orders-application")
     props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")
     props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.stringSerde.getClass)
+    props.put(StreamsConfig.CLIENT_ID_CONFIG, "CLMB");
+    props.put(StreamsConfig.NUM_STANDBY_REPLICAS_CONFIG, 1);
+    props.put(StreamsConfig.REPLICATION_FACTOR_CONFIG, 2);
+    props.put(StreamsConfig.NUM_STREAM_THREADS_CONFIG, 10);
 
     println(topology.describe())
 
